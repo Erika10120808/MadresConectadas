@@ -1,0 +1,79 @@
+<ion-header>
+<ion-toolbar color="dark">
+<ion-title class="titulo-dorado">
+    <ion-icon name="person-circle-outline" slot="start" class="icono-dorado"></ion-icon>
+    Modifica tu perfil
+</ion-title>
+<ion-buttons slot="end">
+    <img src="assets/imagenes/aa8cd491-a400-4d12-9420-9a5b2e45da29.png" class="logo-header" alt="Logo" />
+</ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding fondo-blanco">
+
+<div class="perfil-container">
+<ion-avatar class="avatar-perfil" *ngIf="fotoPerfil">
+    <img [src]="fotoPerfil">
+</ion-avatar>
+<p class="texto-foto" *ngIf="!fotoPerfil">No se ha definido una foto de perfil</p>
+</div>
+
+<ion-item>
+<ion-label position="floating">Nombre</ion-label>
+<ion-input [(ngModel)]="nombre" [readonly]="!modoEditar"></ion-input>
+</ion-item>
+
+<ion-item>
+<ion-label position="floating">Apellido</ion-label>
+<ion-input [(ngModel)]="apellido" [readonly]="!modoEditar"></ion-input>
+</ion-item>
+
+<ion-item>
+<ion-label>Nivel de Educación</ion-label>
+<ion-select [(ngModel)]="nivelEducacion" [disabled]="!modoEditar">
+    <ion-select-option value="Básica">Básica</ion-select-option>
+    <ion-select-option value="Media">Media</ion-select-option>
+    <ion-select-option value="Superior">Superior</ion-select-option>
+</ion-select>
+</ion-item>
+
+<ion-item>
+<ion-label>Fecha de Nacimiento</ion-label>
+<ion-datetime
+    [(ngModel)]="fechaNacimiento"
+    [disabled]="!modoEditar"
+    presentation="date"
+    display-format="DD/MM/YYYY">
+</ion-datetime>
+</ion-item>
+
+<ion-item>
+<ion-label position="floating">Correo</ion-label>
+<ion-input [(ngModel)]="correo" type="email" [readonly]="!modoEditar"></ion-input>
+</ion-item>
+
+<ion-item>
+<ion-label position="floating">Contraseña</ion-label>
+<ion-input [(ngModel)]="contrasena" type="password" [readonly]="!modoEditar"></ion-input>
+</ion-item>
+
+<ion-button
+expand="block"
+[color]="modoEditar ? 'dark' : 'golden'"
+(click)="modoEditar ? guardarCambios() : habilitarEdicion()">
+<ion-icon [name]="modoEditar ? 'save-outline' : 'create-outline'" slot="start" class="icono-contraste"></ion-icon>
+<span class="texto-contraste">{{ modoEditar ? 'Guardar Cambios' : 'Modificar' }}</span>
+</ion-button>
+
+<ion-button expand="block" color="danger" (click)="eliminarDatos()">
+<ion-icon name="trash-outline" slot="start" class="icono-dorado"></ion-icon>
+Eliminar
+</ion-button>
+
+<ion-button expand="block" color="dark" (click)="volverCalendario()">
+<ion-icon name="calendar-outline" slot="start" class="icono-dorado"></ion-icon>
+<span class="texto-dorado">Volver al calendario</span>
+</ion-button>
+
+</ion-content>

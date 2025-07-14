@@ -1,0 +1,48 @@
+.contenido-centrado {
+max-width: 500px;
+margin: 0 auto;
+padding: 10px;
+animation: fadeIn 0.8s ease-in-out;
+}
+
+.animated-item ion-input,
+.animated-item ion-select,
+.animated-item ion-datetime {
+transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.animated-item ion-input:focus,
+.animated-item ion-select:focus,
+.animated-item ion-datetime:focus {
+background-color: #e0f7fa;
+color: #00796b;
+}
+
+.animated-btn {
+transition: background-color 0.3s ease;
+}
+
+.animated-btn:hover,
+.animated-btn:focus {
+background-color: var(--ion-color-light);
+color: var(--ion-color-primary);
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(10px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.calendario-oculto {
+max-width: 100%;
+margin: 10px auto;
+display: block;
+}
+
+

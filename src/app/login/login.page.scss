@@ -1,0 +1,132 @@
+body, html {
+height: 100%;
+margin: 0;
+}
+
+
+.contenido-centrado {
+display: flex;
+flex-direction: column;
+justify-content: flex-start; 
+align-items: center;
+padding-top: 40px;
+text-align: center;
+}
+
+
+ion-item {
+width: 80%;
+max-width: 350px;
+margin-bottom: 12px;
+}
+
+
+ion-button, ion-button[color] {
+--background: black;
+--color: gold;
+font-weight: bold;
+width: 80%;
+max-width: 300px;
+margin-top: 10px;
+--border-radius: 12px;
+display: block;
+}
+
+
+.logo-container {
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+}
+
+.logo-img {
+width: 120px;
+height: auto;
+border-radius: 20px;
+}
+
+
+.titulo-animado {
+animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+0% {
+opacity: 0;
+transform: translateY(-20px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+
+.botones-header {
+background: #b3e0ff;
+border-radius: 8px;
+padding: 4px 8px;
+display: inline-block;
+margin-top: 8px;
+}
+
+.botones-header-flotantes {
+background: #b3e0ff;
+border-radius: 8px;
+padding: 4px 8px;
+display: flex;
+justify-content: flex-start;
+gap: 8px;
+margin: 12px 0 20px 0;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+position: relative;
+z-index: 10;
+}
+
+.btn-custom {
+--background: black;
+--color: gold;
+font-weight: bold;
+width: 80%;
+max-width: 300px;
+margin-top: 10px;
+--border-radius: 12px;
+display: block;
+text-transform: uppercase;
+}
+
+.fondo-oscuro {
+--background: #000000;
+color: gold;
+}
+
+.titulo-dorado {
+color: gold;
+font-weight: bold;
+}
+
+.tarjeta-config {
+--background: #1a1a1a;
+color: gold;
+}
+
+.boton-api {
+--background: transparent;
+--color: black;
+--border: 2px solid gold;
+--border-radius: 12px;
+--box-shadow: 0 0 10px gold;
+--padding-start: 12px;
+--padding-end: 12px;
+--padding-top: 10px;
+--padding-bottom: 10px;
+font-weight: bold;
+font-size: 16px;
+}
+
+.boton-api ion-icon {
+color: gold;
+font-size: 22px;
+margin-right: 8px;
+}
